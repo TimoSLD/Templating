@@ -6,29 +6,28 @@ $result->execute();
 
 $count = $result->rowCount();
 
-$conn = null;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style1.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dynamische applicatie</title>
 </head>
 <body>
 <header>
-<h1> er zijn <?php echo $count ?> characters</h1>
+<h1>alle <?php echo $count ?> characters</h1>
 </header>
 <?php
     foreach ($result as $row) {
-        echo "<img src='assets/images/$row[2]'>
-            $row[1]
-             $row[3]
-             $row[6]
-             $row[7]
-             <a href='character.php?id=$row[0]'>bekijken</a>
+        echo "<img src='assets/images/$row[2]'><br>
+            $row[1]<br>
+             $row[3]<br>
+             $row[6]<br>
+             $row[7]<br>
+             <button><a href='character.php?id=$row[0]'>bekijken</a></button>
              <hr>";
     }
 ?>
